@@ -9,3 +9,4 @@ from vec2d import Vec2d
 #calculates the force of gravity that an object applies on the subject
 def calculateGravity(subjectCenter, subjectMass, objectCenter, objectMass, gravitationalConstant):
     #calculate gravitational force here and return as a vec2d
+    print("placeholder")
