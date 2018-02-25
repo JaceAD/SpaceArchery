@@ -9,11 +9,10 @@ import pygame
 from vec2d import Vec2d
 
 class Matter:
-    def __init__(self, mass, centerX, centerY, vel):
+    def __init__(self, mass, center, vel):
         self.vel = vel
         self.mass = mass
-        self.centerX = centerX
-        self.centerY = centerY
+        self.center = center
         self.mom = self.vel*self.mass
         self.force = Vec2d(0,0)
     

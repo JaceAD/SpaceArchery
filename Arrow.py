@@ -14,3 +14,7 @@ class Arrow(Matter):
         self.vel = vel
         self.mass = mass
         self.force = Vec2d(0,0)
+        self.active = False
+        
+    def getActive(self):
+        return self.active
