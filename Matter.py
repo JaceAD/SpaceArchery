@@ -29,3 +29,19 @@ class Matter:
         pygame.draw.circle(screen, self.color, 
                            coords.pos_to_screen(self.pos).int(), 
                            int(coords.scalar_to_screen(self.radius)), 0)
+        
+        
+class Planet(Matter):
+    def __init__(self, mass, vel, center, radius):
+        Matter.__init__(self, mass, center, vel)
+        self.radius = radius
+        
+        
+class Arrow(Matter):
+    def __init__(self, mass, center, vel):
+        Matter.__init__(self, mass, center, vel) 
+        self.force = Vec2d(0,0)
+        self.active = False
+        
+    def getActive(self):
+        return self.active
