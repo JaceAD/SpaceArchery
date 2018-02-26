@@ -18,3 +18,11 @@ def calculateGravity(subjectCenter, subjectMass, objectCenter, objectMass, gravi
     
     #calculate gravitational force here and return as a vec2d
     return gravityForce
+
+def calculateThrust(arrowCenter, arrowTip, thrustAmount):
+    
+        arrowVec = arrowCenter + arrowTip
+        normalizedArrowVec = arrowVec.normalized() 
+        thrustForce = normalizedArrowVec * thrustAmount
+        
+        return thrustForce
