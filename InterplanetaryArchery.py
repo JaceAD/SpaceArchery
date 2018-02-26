@@ -8,6 +8,7 @@ Created on Fri Feb 23 14:28:08 2018
 import pygame
 from LevelGenerator import LevelGenerator 
 from vec2d import Vec2d
+from coords import Coords
 import ForceCalculator
 from Matter import Arrow 
 from Matter import Planet
@@ -29,20 +30,22 @@ def main():
     levelLoader = LevelGenerator()  #Loads planet layouts into planet array
     
     screen = pygame.display.set_mode([width,height])
-    draw_screen = screen.copy()
-    draw_screen.fill(WHITE)
-    
+    screen_center = Vec2d(width/2, height/2)
+    coords = Coords(screen_center.copy(), 1, True)
+    # ^ Center of window is (0,0), scale is 1:1, and +y is up
+     
+    coords.zoom_at_coords(Vec2d(0,0), 20)
+    # ^Sets camera center
+     
     # Used to manage how fast the screen updates
     clock = pygame.time.Clock()
     
     planets = [];
     planets = levelLoader.loadLevel(levelLoader.getLevel())
-    arrow = Arrow(2, Vec2d(0,0))
+    arrow = Arrow(2, Vec2d(20, 500), Vec2d(0,0))
     
     frame_rate = 60
     playback_speed = 1
-    
-    
     done = False
     while not done:
         # --- Main event loop
