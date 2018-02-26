@@ -8,5 +8,13 @@ from vec2d import Vec2d
 
 #calculates the force of gravity that an object applies on the subject
 def calculateGravity(subjectCenter, subjectMass, objectCenter, objectMass, gravitationalConstant):
+    
+    distanceFrom = objectCenter.get_dist_sqrd(subjectCenter)
+    
+    distVec = objectCenter - subjectCenter
+    normalizedVec = distVec.normalized()
+    
+    gravityForce = (((-1 * gravitationalConstant) * subjectMass * objectMass) / (distanceFrom)) * normalizedVec
+    
     #calculate gravitational force here and return as a vec2d
-    print("placeholder")
+    return gravityForce
