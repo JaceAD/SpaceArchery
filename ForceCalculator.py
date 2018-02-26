@@ -26,3 +26,9 @@ def calculateThrust(arrowCenter, arrowTip, thrustAmount):
         thrustForce = normalizedArrowVec * thrustAmount
         
         return thrustForce
+
+def sumForces(forceList):
+    vecSum = Vec2d(0,0)
+    for force in forceList:
+        vecSum = vecSum + force
+    return vecSum
