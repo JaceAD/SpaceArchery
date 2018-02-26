@@ -21,7 +21,7 @@ def calculateGravity(subjectCenter, subjectMass, objectCenter, objectMass, gravi
 
 def calculateThrust(arrowCenter, arrowTip, thrustAmount):
     
-        arrowVec = arrowCenter + arrowTip
+        arrowVec = arrowTip - arrowCenter
         normalizedArrowVec = arrowVec.normalized() 
         thrustForce = normalizedArrowVec * thrustAmount
         
